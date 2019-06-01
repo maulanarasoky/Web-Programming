@@ -1,0 +1,49 @@
+<!--
+Author	: Maulana Rasoky Nasution
+Website	: https://mul-code.blogspot.com/
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Calculator</title>
+        <script>
+            function calculate() {
+                var number1 = document.getElementById('number1').value;
+                var number2 = document.getElementById('number2').value;
+                var operator = document.getElementById('operator').value;
+                var result;
+                if(operator == "Select the operator") {
+                    result = "Select the operator first...";
+                }else if(operator == "+") {
+                    result = (parseInt(number1) + parseInt(number2));
+                }else if(operator == "-") {
+                    result = (parseInt(number1) - parseInt(number2));
+                }else if(operator == "*") {
+                    result = (parseInt(number1) * parseInt(number2));
+                }else if(operator == "/") {
+                    result = (parseInt(number1) / parseInt(number2));
+                }
+                document.getElementById('result').innerHTML = result;
+            }
+        </script>
+    </head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><input type="number" id="number1" placeholder="number 1"/></td>
+                <td><select id="operator">
+                        <option value="Select the operator">Select the operator</option>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                    </select></td>
+                <td><input type="number" id="number2" placeholder="number 2"/></td>
+                <td><button type="button" id="submit" onclick="calculate();">Calculate</button></td>
+            </tr>
+        </table>
+    </form>
+    <p id="result"></p>
+</body>
+</html>
